@@ -223,11 +223,11 @@ extension ViewController {
         sendMessageButton.translatesAutoresizingMaskIntoConstraints = false
         sendMessageButton.topAnchor.constraint(equalTo: messageField.bottomAnchor, constant: 3).isActive = true
         sendMessageButton.centerXAnchor.constraint(equalTo: bodyView.centerXAnchor).isActive = true
-        sendMessageButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        sendMessageButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        sendMessageButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        sendMessageButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
         sendMessageButton.setTitle("SEND MESSAGE", for: .normal)
         sendMessageButton.backgroundColor = .black
-        sendMessageButton.titleLabel?.font = UIFont.systemFont(ofSize: 10)
+        sendMessageButton.titleLabel?.font = UIFont.systemFont(ofSize: 8)
         sendMessageButton.titleLabel?.textColor = .white
     }
     func setUpBodyView(){
