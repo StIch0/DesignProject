@@ -230,17 +230,7 @@ extension ViewController {
         sendMessageButton.titleLabel?.font = UIFont.systemFont(ofSize: 8)
         sendMessageButton.titleLabel?.textColor = .white
     }
-    func setUpBodyView(){
-        bodyView = UIView()
-        view.addSubview(bodyView)
-        bodyView.translatesAutoresizingMaskIntoConstraints = false
-        bodyView.backgroundColor = UIColor(red: 230, green: 230, blue: 230, alpha: 1)
-        bodyView.layer.opacity = 0.9
-        bodyView.topAnchor.constraint(equalTo: headView.bottomAnchor).isActive = true
-        bodyView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        bodyView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        bodyView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-
+    fileprivate func setUpBlogPostLabel() {
         blogPostLabel = UILabel()
         bodyView.addSubview(blogPostLabel)
         blogPostLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -253,20 +243,51 @@ extension ViewController {
         blogPostLabel.topAnchor.constraint(equalTo: bodyView.topAnchor, constant: 20).isActive = true
         blogPostLabel.widthAnchor.constraint(equalTo: bodyView.widthAnchor, constant: -10).isActive = true
         blogPostLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+    }
+    
+    func setUpBodyView(){
+        //set up bodyView
+        bodyView = UIView()
+        view.addSubview(bodyView)
+        bodyView.translatesAutoresizingMaskIntoConstraints = false
+        bodyView.backgroundColor = UIColor(red: 230, green: 230, blue: 230, alpha: 1)
+        bodyView.layer.opacity = 0.9
+        bodyView.topAnchor.constraint(equalTo: headView.bottomAnchor).isActive = true
+        bodyView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        bodyView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        bodyView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
 
-        setUpContainerView()
-        setUpWallImage()
-        setUpFirstTextView()
-        setUpSecondTextView()
-        setUpThridTextView()
-        setUpHeadingTitle()
-        setUpFourthTextView()
-        setUpFifthTextView()
-        setUpCommentLabel()
-        setUpTextFields()
-        setUpSendButton()
-       
+        //setup first label, setup constraints and preferenses
+        setUpBlogPostLabel()
         
+        //setup container view whith authors, date and numberf of likes, setup constraints and preferenses
+        setUpContainerView()
+        
+        //setup image, setup constraints and preferenses
+        setUpWallImage()
+        
+        //#start region set up text view, setup constraints and preferenses
+        setUpFirstTextView()
+        
+        setUpSecondTextView()
+        
+        setUpThridTextView()
+        //setup title between textView, setup constraints and preferenses
+        setUpHeadingTitle()
+        
+        setUpFourthTextView()
+        
+        setUpFifthTextView()
+        //#end region
+        
+        //setup label LEAVE A COMMENT, setup constraints and preferenses
+        setUpCommentLabel()
+        
+        //setup container whith such text fields as Name, Email and Website, setup constraints and preferenses
+        setUpTextFields()
+        
+        //set up send message button, setup constraints and preferenses
+        setUpSendButton()
     }
 }
 

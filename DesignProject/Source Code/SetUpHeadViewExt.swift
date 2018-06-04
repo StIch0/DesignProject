@@ -15,13 +15,14 @@ extension ViewController {
         view.addSubview(headView)
         headView.backgroundColor = UIColor(red: 250, green: 250, blue: 250, alpha: 1)
         headView.layer.opacity = 0.8
+        //anable autolayout
         headView.translatesAutoresizingMaskIntoConstraints = false
-
+        //setup constrait for headView
         headView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         headView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         headView.topAnchor.constraint(equalTo: view.topAnchor, constant: 65).isActive = true
         headView.heightAnchor.constraint(equalToConstant: 120).isActive = true
-
+        //setup preferens for headViewLabel
         headLabelTextUp = UILabel()
         headLabelTextDown = UILabel()
         headLabelTextUp.backgroundColor = .black
